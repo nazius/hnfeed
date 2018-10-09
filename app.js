@@ -68,10 +68,7 @@ const requestNews = () => {
     })
 }
 
-cron.schedule('*/60 * * * *', () => {
-  console.log(new Date().getMinutes())
-  requestNews()
-});
+cron.schedule('*/60 * * * *', () => { requestNews() });
 requestNews()
 
 module.exports = app;
