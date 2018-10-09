@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  .card.bg-info.mb-3
+    .card-header
+      h1= title
+      h5.card-title= subtitle
+    .card-body
+      ul.list-group
+        each item in news
+          if !item.deleted && (item.story_title || item.title)
+            li.list-group-item.align-items-center.listItem
+              .row.justify-content-center.listItem
+                .col-sm-6
+                  h5.mb-1(class=`active_${null !== (item.story_url || item.url)}` onclick=`newTab(${JSON.stringify(item.story_url || item.url)})`)= item.story_title || item.title
+                .col-sm-2
+                  p.author= item.author
+                .col-sm-2
+                  small.float-right= prettyDate(item.created_at)
+                .col-sm-2
+                  i.far.fa-trash-alt.fa-2x.active_true.float-right(onclick=`deleteNews(${JSON.stringify(item.objectID)})`)

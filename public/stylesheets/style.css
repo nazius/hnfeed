@@ -1,0 +1,22 @@
+body {
+  padding: 50px;
+  font: 13px;
+}
+.active_true {
+  cursor: pointer;
+}
+.active_false {
+  cursor: not-allowed;
+}
+.listItem {
+  background-color: #fff;
+  border: 1px #ccc;
+  color: #333;
+  font-size: 13px;
+}
+.author {
+  color: #999;
+}
+.listItem:hover { 
+  background-color: #fafafa;
+}
